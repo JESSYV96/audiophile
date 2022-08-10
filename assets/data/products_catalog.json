@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "slug": "xx99-mark-1-headphones",
+            "name": "XX99 Mark I Headphones",
+            "description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
+            "category": "headphone",
+            "price": 1750,
+            "isNewProduct": false
+        },
+        {
+            "id": 2,
+            "slug": "xx99-mark-2-headphones",
+            "name": "XX99 Mark II Headphones",
+            "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+            "category": "headphone",
+            "price": 2999,
+            "isNewProduct": true
+        },
+        {
+            "id": 3,
+            "slug": "xx59-headphones",
+            "name": "XX59 Headphones",
+            "description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
+            "category": "headphone",
+            "price": 899,
+            "isNewProduct": false
+        },
+        {
+            "id": 4,
+            "slug": "zx9-speaker",
+            "name": "ZX9 Speaker",
+            "description": "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+            "category": "speaker",
+            "price": 4500,
+            "isNewProduct": true
+        },
+        {
+            "id": 4,
+            "slug": "zx7-speaker",
+            "name": "ZX7 Speaker",
+            "description": " Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+            "category": "speaker",
+            "price": 3500,
+            "isNewProduct": false
+        },
+        {
+            "id": 5,
+            "slug": "yx1-wireless-earphones",
+            "name": "YX1 Wireless Earphones",
+            "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+            "category": "earphone",
+            "price": 599,
+            "isNewProduct": true
+        }
+    ]
+}
