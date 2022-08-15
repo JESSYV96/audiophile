@@ -1,4 +1,5 @@
 {
-    "helloWorld": "Hello World!",
-    "description": "The conventional newborn programmer greeting"
+    "newProduct": "New product",
+    "seeProduct": "See product",
+    "addToCart": "Add to cart"
 }

@@ -1,4 +1,5 @@
 {
-    "helloWorld": "Salut tout le monde",
-    "description": "The conventional newborn programmer greeting"
+    "newProduct": "Nouveau produit",
+    "seeProduct": "Voir le produit",
+    "addToCart": "Ajouter au panier"
 }
