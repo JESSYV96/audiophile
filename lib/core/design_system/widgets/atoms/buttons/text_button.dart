@@ -15,7 +15,7 @@ class AppTextButton extends StatelessWidget {
       onPressed: action,
       child: Text(
         text,
-        style: const TextStyle(color: AppColors.fullBlack),
+        style: const TextStyle(color: AppColors.black),
       ),
     );
   }

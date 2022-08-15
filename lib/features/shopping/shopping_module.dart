@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'presenter/screens/home_screen.dart';
-import 'presenter/screens/product_detail_screen.dart';
+import 'presenter/screens/product_details_screen.dart';
 
 class ShoppingModule extends Module {
   @override

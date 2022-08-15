@@ -1,6 +1,6 @@
-import '../entities/product.dart';
-import '../enums/products_category.dart';
-import '../interfaces/product_repository.dart';
+import '../../entities/product.dart';
+import '../../enums/products_category.dart';
+import '../../interfaces/product_repository.dart';
 
 class GetProductsByCategoryUseCase {
   final ProductCategory category;

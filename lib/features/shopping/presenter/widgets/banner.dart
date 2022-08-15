@@ -1,6 +1,6 @@
-import 'package:audiophile/core/design_system/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../core/design_system/widgets/atoms/buttons/filled_button.dart';
 import '../../domain/entities/product.dart';
@@ -31,7 +31,7 @@ class BannerHome extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 55),
+        padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,7 +39,7 @@ class BannerHome extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Text(
-                'New Product'.toUpperCase(),
+                AppLocalizations.of(context)!.newProduct.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.overline,
               ),
@@ -63,7 +63,7 @@ class BannerHome extends StatelessWidget {
               ),
             ),
             FilledButton(
-                text: 'See product'.toUpperCase(),
+                text: AppLocalizations.of(context)!.seeProduct.toUpperCase(),
                 action: () {
                   Modular.to.pushNamed('/products/${spotlightProduct.slug}',
                       arguments: spotlightProduct);

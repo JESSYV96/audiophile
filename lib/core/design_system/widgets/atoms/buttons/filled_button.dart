@@ -15,14 +15,18 @@ class FilledButton extends StatelessWidget {
       onPressed: action,
       style: ElevatedButton.styleFrom(
         primary: AppColors.secondary,
-        fixedSize: const Size(130, 35),
+        fixedSize: const Size(140, 45),
+        elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
           side: BorderSide(color: AppColors.secondary),
         ),
         textStyle: Theme.of(context).textTheme.subtitle1,
       ),
-      child: Text(text),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

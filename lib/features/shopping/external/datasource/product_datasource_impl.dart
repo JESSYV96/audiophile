@@ -18,7 +18,6 @@ class ProductDatasource implements IProductDatasource {
   Future<List<Map<String, Object>>> getProductsByCategory(
       ProductCategory category) {
     return Future.delayed(const Duration(milliseconds: 500), () {
-      print('Get $category products');
       return [
         {
           "id": 1,

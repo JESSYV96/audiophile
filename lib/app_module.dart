@@ -11,6 +11,6 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ModuleRoute('/products', module: ShoppingModule())
+    ModuleRoute('/products/', module: ShoppingModule())
   ];
 }

@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 
-class IconSlot extends StatelessWidget {
+class AppIcon extends StatelessWidget {
   final IconData icon;
+  final double? size;
+  final Color? color;
+  final EdgeInsets? padding;
+  final Function()? action;
 
-  const IconSlot({Key? key, required this.icon}) : super(key: key);
+  const AppIcon(
+      {Key? key,
+      required this.icon,
+      this.color,
+      this.padding,
+      this.size,
+      this.action})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {},
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-      icon: Icon(
+    return GestureDetector(
+      onTap: action ?? () {},
+      child: Icon(
         icon,
-        color: Theme.of(context).appBarTheme.iconTheme?.color,
+        size: size,
+        color: color ?? Theme.of(context).appBarTheme.iconTheme?.color,
       ),
     );
   }

@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Modular.setNavigatorKey();
     Modular.setInitialRoute('/products/');
 
     return MaterialApp.router(
@@ -29,12 +30,30 @@ class AppWidget extends StatelessWidget {
               fontSize: 22,
               fontWeight: FontWeight.w900,
             ),
-            backgroundColor: AppColors.fullBlack),
+            backgroundColor: AppColors.black),
         fontFamily: 'Manrope',
         textTheme: const TextTheme(
             headline1: TextStyle(
               color: AppColors.white,
               fontSize: 34,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 2,
+            ),
+            headline2: TextStyle(
+              color: AppColors.black,
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 2,
+            ),
+            headline3: TextStyle(
+              color: AppColors.black,
+              fontSize: 26,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 2,
+            ),
+            headline6: TextStyle(
+              color: AppColors.black,
+              fontSize: 16,
               fontWeight: FontWeight.w600,
               letterSpacing: 2,
             ),
