@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../features/shopping/presenter/widgets/cart/cart.dart';
+import '../../../../features/shopping/presenter/widgets/cart/cart_dialog.dart';
 import '../atoms/icon.dart';
 
-PreferredSizeWidget defaultAppBar(BuildContext context) {
+PreferredSizeWidget defaultAppBar(BuildContext context, dynamic cart) {
   return AppBar(
     leading: const Padding(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
@@ -20,7 +20,7 @@ PreferredSizeWidget defaultAppBar(BuildContext context) {
         child: AppIcon(
             icon: Icons.shopping_cart_outlined,
             action: () {
-              cartDialog(context);
+              cartDialog(context, cart);
             }),
       ),
     ],

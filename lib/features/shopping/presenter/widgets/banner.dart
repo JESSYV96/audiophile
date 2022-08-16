@@ -30,46 +30,43 @@ class BannerHome extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text(
-                AppLocalizations.of(context)!.newProduct.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.overline,
-              ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Text(
+              AppLocalizations.of(context)!.newProduct.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.overline,
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text(
-                spotlightProduct.name.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline1,
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Text(
+              spotlightProduct.name.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline1,
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                bottom: 30,
-              ),
-              child: Text(
-                "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 30,
             ),
-            FilledButton(
-                text: AppLocalizations.of(context)!.seeProduct.toUpperCase(),
-                action: () {
-                  Modular.to.pushNamed('/products/${spotlightProduct.slug}',
-                      arguments: spotlightProduct);
-                })
-          ],
-        ),
+            child: Text(
+              "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+          ),
+          AppFilledButton(
+              text: AppLocalizations.of(context)!.seeProduct.toUpperCase(),
+              action: () {
+                Modular.to.pushNamed('/products/${spotlightProduct.slug}',
+                    arguments: spotlightProduct);
+              })
+        ],
       ),
     );
   }

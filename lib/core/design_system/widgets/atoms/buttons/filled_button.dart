@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../../colors.dart';
 
-class FilledButton extends StatelessWidget {
+class AppFilledButton extends StatelessWidget {
   final String text;
+  final double? width;
+  final double? height;
   final void Function() action;
 
-  const FilledButton({Key? key, required this.text, required this.action})
+  const AppFilledButton(
+      {Key? key,
+      required this.text,
+      this.width,
+      this.height,
+      required this.action})
       : super(key: key);
 
   @override
@@ -15,7 +22,7 @@ class FilledButton extends StatelessWidget {
       onPressed: action,
       style: ElevatedButton.styleFrom(
         primary: AppColors.secondary,
-        fixedSize: const Size(140, 45),
+        fixedSize: Size(width ?? 140, height ?? 45),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,

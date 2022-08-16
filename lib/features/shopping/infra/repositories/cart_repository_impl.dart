@@ -1,5 +1,4 @@
-import 'package:audiophile/features/shopping/domain/value_object/item.dart';
-
+import '../../domain/entities/item.dart';
 import '../../domain/interfaces/cart_repository.dart';
 import '../interfaces/cart_datasource.dart';
 
@@ -17,5 +16,10 @@ class CartRepository implements ICartRepository {
   @override
   Future<void> remove(String element) async{
     await _datasource.remove(element);
+  }
+  
+  @override
+  Future<Set<Item>> get() {
+    return _datasource.get();
   }
 }

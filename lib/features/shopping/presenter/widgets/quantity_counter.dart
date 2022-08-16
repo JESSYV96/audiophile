@@ -6,11 +6,13 @@ import '../../../../core/design_system/widgets/atoms/icon.dart';
 
 class QuantityCounter extends ConsumerWidget {
   final int quantity;
+  final Size? size;
   final VoidCallback raiseQuantity;
   final VoidCallback reduceQuantity;
 
   const QuantityCounter(
       {Key? key,
+      this.size,
       required this.quantity,
       required this.raiseQuantity,
       required this.reduceQuantity})
@@ -19,8 +21,8 @@ class QuantityCounter extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      width: 140,
-      height: 45,
+      width: size?.width ?? 140,
+      height: size?.height ?? 45,
       color: AppColors.gray,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

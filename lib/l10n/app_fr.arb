@@ -1,5 +1,9 @@
 {
     "newProduct": "Nouveau produit",
     "seeProduct": "Voir le produit",
-    "addToCart": "Ajouter au panier"
+    "cart": "Panier",
+    "addToCart": "Ajouter au panier",
+    "removeAll": "Tout supprimer",
+    "checkout": "Paiement",
+    "total": "Total"
 }

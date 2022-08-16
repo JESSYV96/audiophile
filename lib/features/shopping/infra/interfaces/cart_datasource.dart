@@ -1,8 +1,8 @@
 import '../../../../core/interface/crud.dart';
-import '../../domain/entities/cart.dart';
-import '../../domain/value_object/item.dart';
+import '../../domain/entities/item.dart';
 
-abstract class ICartdatasource implements Crud2<Cart, Item> {
+abstract class ICartdatasource implements Crud<Item> {
+  Future<Set<Item>> get();
   @override
   Future<void> add(Item newItem);
   @override

@@ -1,5 +1,9 @@
 {
     "newProduct": "New product",
     "seeProduct": "See product",
-    "addToCart": "Add to cart"
+    "cart": "Cart",
+    "addToCart": "Add to cart",
+    "removeAll": "Remove all",
+    "checkout": "Checkout",
+    "total": "total"
 }

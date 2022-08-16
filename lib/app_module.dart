@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'features/checkout/checkout_module.dart';
 import 'features/shopping/shopping_module.dart';
 
 class AppModule extends Module {
@@ -11,6 +12,7 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ModuleRoute('/products/', module: ShoppingModule())
+    ModuleRoute('/products/', module: ShoppingModule()),
+    ModuleRoute('/checkout/', module: CheckoutModule()),
   ];
 }

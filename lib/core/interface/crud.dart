@@ -2,7 +2,7 @@
 // @HACK: Make two generics classes
 abstract class Crud<T> {
   Future<void> add(T element);
-  Future<void> remove();
+  Future<void> remove(String element);
 }
 
 abstract class Crud2<T, S> {
