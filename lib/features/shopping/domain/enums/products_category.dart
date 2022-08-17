@@ -1,1 +1,1 @@
-enum ProductCategory { headphone, speaker, earphone }
+enum ProductCategory { headphones, speakers, earphones }

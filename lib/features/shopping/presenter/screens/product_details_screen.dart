@@ -10,7 +10,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../core/layouts/default_layout.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/use_cases/cart/add_item_to_cart.dart';
-import '../widgets/quantity_counter.dart';
+import '../widgets/cart/quantity_counter.dart';
 
 final quantityProvider = StateProvider.autoDispose((ref) => 1);
 
@@ -64,7 +64,7 @@ class ProductDetailScreen extends ConsumerWidget {
               padding: const EdgeInsets.only(bottom: 20),
               child: Text(
                 "2999.29 €",
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.headline5,
               ),
             ),
             Row(

@@ -19,7 +19,7 @@ class CartRepository implements ICartRepository {
   }
   
   @override
-  Future<Set<Item>> get() {
-    return _datasource.get();
+  Future<Set<Item>> getAll() {
+    return _datasource.getAll();
   }
 }

@@ -51,14 +51,20 @@ class AppWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
               letterSpacing: 2,
             ),
-            headline6: TextStyle(
+            headline5: TextStyle(
               color: AppColors.black,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               letterSpacing: 2,
             ),
-            bodyText1: TextStyle(
+            headline6: TextStyle(
               color: AppColors.gray,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 2,
+            ),
+            bodyText1: TextStyle(
+              color: AppColors.black,
               fontWeight: FontWeight.w500,
               fontSize: 14,
             ),
@@ -73,7 +79,7 @@ class AppWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
               letterSpacing: 1,
             )),
-        scaffoldBackgroundColor: AppColors.lightgray,
+        scaffoldBackgroundColor: AppColors.white,
       ),
     );
   }

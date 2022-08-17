@@ -2,6 +2,7 @@
     "newProduct": "Nouveau produit",
     "seeProduct": "Voir le produit",
     "cart": "Panier",
+    "cartIsEmpty": "Votre panier est vide",
     "addToCart": "Ajouter au panier",
     "removeAll": "Tout supprimer",
     "checkout": "Paiement",

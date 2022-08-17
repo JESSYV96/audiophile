@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../features/shopping/presenter/widgets/cart/cart_dialog.dart';
 import '../atoms/icon.dart';
@@ -11,8 +12,11 @@ PreferredSizeWidget defaultAppBar(BuildContext context, dynamic cart) {
         icon: Icons.menu,
       ),
     ),
-    title: const Text(
-      'audiophile',
+    title: GestureDetector(
+      onTap: () => Modular.to.navigate('/products/'),
+      child: const Text(
+        'audiophile',
+      ),
     ),
     actions: [
       Padding(

@@ -1,4 +1,4 @@
-import 'package:audiophile/features/shopping/presenter/widgets/quantity_counter.dart';
+import 'package:audiophile/features/shopping/presenter/widgets/cart/quantity_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -33,11 +33,8 @@ class CartItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              Characters(item.name).take(8).toString(), // Cut String
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(color: AppColors.black),
+              item.shortName.toString(), // Cut String
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             Text(
               amountFormat.format(item.amount),

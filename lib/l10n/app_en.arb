@@ -2,6 +2,7 @@
     "newProduct": "New product",
     "seeProduct": "See product",
     "cart": "Cart",
+    "cartIsEmpty": "Your cart is empty",
     "addToCart": "Add to cart",
     "removeAll": "Remove all",
     "checkout": "Checkout",

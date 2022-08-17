@@ -7,7 +7,7 @@ import 'cart_preferences.dart';
 class CartDatasource implements ICartdatasource {
   @override
   Future<void> add(Item newItem) async {
-    final currentCart = await get();
+    final currentCart = await getAll();
     currentCart.add(newItem);
     final List<String> newCart = currentCart.map((item) {
       return json.encode(Item.toJson(item));
@@ -21,7 +21,7 @@ class CartDatasource implements ICartdatasource {
   }
 
   @override
-  Future<Set<Item>> get() async {
+  Future<Set<Item>> getAll() async {
     return CartPreferences.getItems();
   }
 }

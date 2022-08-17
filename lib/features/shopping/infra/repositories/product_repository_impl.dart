@@ -1,5 +1,3 @@
-import 'package:audiophile/features/shopping/domain/enums/products_category.dart';
-
 import 'package:audiophile/features/shopping/domain/entities/product.dart';
 import 'package:audiophile/features/shopping/infra/interfaces/products_datasources.dart';
 
@@ -11,13 +9,22 @@ class ProductRepository implements IProductRepository {
   ProductRepository(this._datasource);
 
   @override
+  Future<List<Product>> getAll() async {
+    return _datasource.getProducts();
+  }
+
+  @override
   Future<Product> getProductByName(String slug) async {
     return _datasource.getProductByName(slug);
   }
-  
+
   @override
-  Future<List<Product>> getProductsByCategory(ProductCategory category) {
+  Future<void> add(Product element) {
     throw UnimplementedError();
   }
 
+  @override
+  Future<void> remove(String element) {
+    throw UnimplementedError();
+  }
 }

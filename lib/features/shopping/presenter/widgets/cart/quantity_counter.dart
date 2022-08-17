@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/design_system/colors.dart';
-import '../../../../core/design_system/widgets/atoms/icon.dart';
+import '../../../../../core/design_system/colors.dart';
+import '../../../../../core/design_system/widgets/atoms/icon.dart';
 
 class QuantityCounter extends ConsumerWidget {
   final int quantity;

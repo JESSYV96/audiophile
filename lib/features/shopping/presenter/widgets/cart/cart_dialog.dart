@@ -37,14 +37,16 @@ Future<void> cartDialog(BuildContext context, AsyncValue<Set<Item>> cart) {
           child: Column(children: [
             cart.when(
                 loading: () => const CircularProgressIndicator(),
-                error: (error, stack) => Text(error.toString(),
-                    style: TextStyle(color: AppColors.black)),
+                error: (error, stack) => Text(
+                      error.toString(),
+                      style: const TextStyle(color: AppColors.black),
+                    ),
                 data: (items) {
                   cartItems = items;
                   if (items.isEmpty) {
-                    return const Text(
-                      'Your cart is empty.',
-                      style: TextStyle(color: AppColors.black),
+                    return Text(
+                      AppLocalizations.of(context)!.cartIsEmpty,
+                      style: const TextStyle(color: AppColors.black),
                     );
                   }
                   return Column(
@@ -66,7 +68,7 @@ Future<void> cartDialog(BuildContext context, AsyncValue<Set<Item>> cart) {
                   Text(
                       amountFormat
                           .format(CartService.getTotalAmount(cartItems)),
-                      style: Theme.of(context).textTheme.headline6)
+                      style: Theme.of(context).textTheme.headline5)
                 ],
               ),
             ),

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/design_system/widgets/molecules/app_bar.dart';
 import '../../features/shopping/domain/entities/item.dart';
 import '../../features/shopping/presenter/providers/get_cart_provider.dart';
+import '../design_system/colors.dart';
 import '../design_system/widgets/atoms/go_back.dart';
 
 class DefaultLayout extends ConsumerWidget {
