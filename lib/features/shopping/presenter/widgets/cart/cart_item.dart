@@ -2,7 +2,7 @@ import 'package:audiophile/features/shopping/presenter/widgets/cart/quantity_cou
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../../core/design_system/colors.dart';
+import '../../../../../core/theme/colors.dart';
 import '../../../domain/entities/item.dart';
 
 class CartItem extends StatelessWidget {

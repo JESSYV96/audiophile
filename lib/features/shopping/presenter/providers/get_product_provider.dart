@@ -5,9 +5,10 @@ import '../../domain/use_cases/product/get_product.dart';
 import '../../external/datasource/product_datasource_impl.dart';
 import '../../infra/repositories/product_repository_impl.dart';
 
-final getProductProvider = FutureProvider.family<Product, String>((_, slug) async {
+final getProductProvider =
+    FutureProvider.family<Product, String>((_, slug) async {
   return GetProductUseCase(
     slug: slug,
     repository: ProductRepository(ProductDatasource()),
-  ).apply();
+  ).invoke();
 });

@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "d4715a0a8884372a7328a1558d0729e06716867206c6c3d47d32c8e1ec49421a"
+build_start_time: [1660829553, 345052003]
+build_end_time: [1660829568, 56282043]
+inputs:
+  "/Users/jessy1/Projets/audiophile_clean/ios/Runner/AppDelegate.swift": [1642102340, 66776514]

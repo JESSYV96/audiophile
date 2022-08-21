@@ -9,7 +9,7 @@ class GetCartUsecase implements Usecase<Set<Item>, ICartRepository> {
   GetCartUsecase({required this.repository});
 
   @override
-  Future<Set<Item>> apply() async {
+  Future<Set<Item>> invoke() async {
     return repository.getAll();
   }
 }

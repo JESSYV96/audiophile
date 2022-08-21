@@ -11,7 +11,7 @@ class GetProductUseCase implements Usecase<Product, IProductRepository> {
   GetProductUseCase({required this.slug, required this.repository});
 
   @override
-  Future<Product> apply() async {
+  Future<Product> invoke() async {
     return repository.getProductByName(slug);
   }
 }

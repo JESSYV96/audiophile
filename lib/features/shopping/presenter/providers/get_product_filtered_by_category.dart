@@ -10,5 +10,5 @@ final getProductFilteredByCategoryProvider =
   return GetProductsByCategoryUseCase(
     categoryName: category,
     repository: ProductRepository(ProductDatasource()),
-  ).apply();
+  ).invoke();
 });

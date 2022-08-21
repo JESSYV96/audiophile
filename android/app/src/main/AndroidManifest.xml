@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.clean_archi_flutter">
+    package="com.audiophile.vautour.jessy">
    <application
         android:label="clean_archi_flutter"
         android:name="${applicationName}"

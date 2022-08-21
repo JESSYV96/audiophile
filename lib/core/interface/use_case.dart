@@ -3,5 +3,5 @@ abstract class Usecase<T, I> {
 
   Usecase(this.repository);
 
-  Future<T> apply();
+  Future<T> invoke();
 }

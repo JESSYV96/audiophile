@@ -19,13 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
-
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+  
 dependencies:
   flutter:
     sdk: flutter
@@ -33,23 +27,18 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   equatable: ^2.0.0
-  objectbox: ^1.6.0
-  objectbox_flutter_libs: any
   shared_preferences: ^2.0.15
   cupertino_icons: ^1.0.2
   flutter_modular: ^5.0.3
   flutter_riverpod: ^2.0.0-dev.9
+  flutter_hooks: ^0.18.5+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^1.0.0
-  objectbox_generator: any
   build_runner: ^2.2.0
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
 flutter:
   generate: true

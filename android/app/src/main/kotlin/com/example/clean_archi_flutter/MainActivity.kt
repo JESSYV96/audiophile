@@ -1,4 +1,4 @@
-package com.example.clean_archi_flutter
+package com.audiophile.vautour.jessy
 
 import io.flutter.embedding.android.FlutterActivity
 

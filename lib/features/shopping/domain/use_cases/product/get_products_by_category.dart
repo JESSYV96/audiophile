@@ -8,7 +8,7 @@ class GetProductsByCategoryUseCase {
   GetProductsByCategoryUseCase(
       {required this.categoryName, required this.repository});
 
-  Future<List<Product>> apply() async {
+  Future<List<Product>> invoke() async {
     final List<Product> products = await repository.getAll();
 
     return products

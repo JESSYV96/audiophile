@@ -1,11 +1,12 @@
-import 'package:audiophile/features/shopping/presenter/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/design_system/colors.dart';
-import '../../../../core/layouts/default_layout.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/widgets/molecules/app_bar.dart';
+import '../providers/cart_provider.dart';
 import '../providers/get_product_filtered_by_category.dart';
-import '../widgets/product_category_list.dart';
+import '../widgets/product/product_category_list.dart';
+import '../widgets/product/product_item.dart';
 
 class ProductCategoryScreen extends ConsumerWidget {
   final String categoryName;
@@ -15,8 +16,11 @@ class ProductCategoryScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final productsList =
         ref.watch(getProductFilteredByCategoryProvider(categoryName));
-    return DefaultLayout(
-      body: Column(  
+    final cartNotifier = ref.read(cartProvider.notifier);
+
+    return Scaffold(
+      appBar: defaultAppBar(context, cartNotifier),
+      body: ListView(
         children: [
           _categoryHeader(context),
           productsList.when(

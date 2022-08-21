@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'core/design_system/colors.dart';
+import 'core/theme/colors.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -79,6 +79,7 @@ class AppWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
               letterSpacing: 1,
             )),
+        primarySwatch: AppColors.primaryBlack,
         scaffoldBackgroundColor: AppColors.white,
       ),
     );

@@ -1,15 +1,14 @@
-import 'package:audiophile/core/design_system/colors.dart';
-import 'package:audiophile/core/design_system/widgets/atoms/buttons/filled_button.dart';
-import 'package:audiophile/features/shopping/external/datasource/cart/cart_datasource_impl.dart';
-import 'package:audiophile/features/shopping/infra/repositories/cart_repository_impl.dart';
+import 'package:audiophile/core/theme/colors.dart';
+import 'package:audiophile/core/theme/widgets/atoms/buttons/filled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:intl/intl.dart';
 
-import '../../../../core/layouts/default_layout.dart';
+import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../domain/entities/product.dart';
-import '../../domain/use_cases/cart/add_item_to_cart.dart';
+import '../providers/cart_provider.dart';
 import '../widgets/cart/quantity_counter.dart';
 
 final quantityProvider = StateProvider.autoDispose((ref) => 1);
@@ -19,20 +18,17 @@ class ProductDetailScreen extends ConsumerWidget {
 
   const ProductDetailScreen(this.product, {Key? key}) : super(key: key);
 
-  void _addNewItem(Product product, int quantity) {
-    AddItemUsecase(repository: CartRepository(CartDatasource()))
-        .apply(product, quantity);
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final amountFormat = NumberFormat.currency(locale: "en_US", symbol: "€");
     final quantity = ref.watch(quantityProvider);
+    final cartNotifier = ref.read(cartProvider.notifier);
 
-    return DefaultLayout(
+    return Scaffold(
+      appBar: defaultAppBar(context, cartNotifier),
       body: Container(
         margin: const EdgeInsets.only(left: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
@@ -63,7 +59,7 @@ class ProductDetailScreen extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Text(
-                "2999.29 €",
+                amountFormat.format(product.price),
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -84,8 +80,8 @@ class ProductDetailScreen extends ConsumerWidget {
                 AppFilledButton(
                   text: AppLocalizations.of(context)!.addToCart,
                   action: () {
-                    _addNewItem(product, quantity);
-                    Modular.to.navigate('/products/');
+                    ref.read(cartProvider.notifier).addItem(product, quantity);
+                    Modular.to.pop();
                   },
                 ),
               ],

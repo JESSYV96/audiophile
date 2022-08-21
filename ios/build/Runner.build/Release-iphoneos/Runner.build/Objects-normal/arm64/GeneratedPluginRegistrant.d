@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/jessy1/Projets/audiophile_clean/ios/Runner/GeneratedPluginRegistrant.m \
+  /Users/jessy1/Projets/audiophile_clean/ios/Runner/GeneratedPluginRegistrant.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Modules/module.modulemap \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterViewController.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterEngineGroup.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterEngine.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterDartProject.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterTexture.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPlatformViews.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterChannels.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPlugin.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterMacros.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterAppDelegate.h \
+  /Users/jessy1/Projets/audiophile_clean/ios/build/Release-iphoneos/Flutter.framework/Headers/Flutter.h

@@ -6,5 +6,17 @@
     "addToCart": "Add to cart",
     "removeAll": "Remove all",
     "checkout": "Checkout",
+    "billingDetails": "Billing details",
+    "shippingInfo": "Shipping Information",
+    "paymentDetails": "Payment details",
+    "paymentMethod": "Payment method",
+    "name": "Name",
+    "email": "Email",
+    "emailAddress": "Email address",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "zipCode": "Zip code",
+    "city": "City",
+    "country": "Country",
     "total": "total"
 }

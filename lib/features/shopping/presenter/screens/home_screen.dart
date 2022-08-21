@@ -3,15 +3,43 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../core/design_system/colors.dart';
-import '../../../../core/design_system/widgets/atoms/buttons/filled_button.dart';
-import '../../../../core/layouts/default_layout.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
+import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../domain/entities/product.dart';
+import '../providers/cart_provider.dart';
 import '../providers/get_product_provider.dart';
-import '../widgets/product_category_list.dart';
+import '../widgets/product/product_category_list.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _HomeScreen createState() => _HomeScreen();
+}
+
+class _HomeScreen extends ConsumerState<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final cartNotifier = ref.read(cartProvider.notifier);
+
+    final AsyncValue<Product> spotlightProduct =
+        ref.watch(getProductProvider('xx99-mark-2-headphones'));
+
+    return Scaffold(
+      appBar: defaultAppBar(context, cartNotifier),
+      body: ListView(
+        children: [
+          spotlightProduct.when(
+            loading: () => const CircularProgressIndicator(),
+            error: (error, stack) => Text(error.toString()),
+            data: (product) => _banner(context, product),
+          ),
+          const ProductCategoryList()
+        ],
+      ),
+    );
+  }
 
   Widget _banner(BuildContext context, Product spotlightProduct) {
     double getScreenHeight() {
@@ -69,24 +97,6 @@ class HomeScreen extends ConsumerWidget {
                 Modular.to.pushNamed('/products/${spotlightProduct.slug}',
                     arguments: spotlightProduct);
               })
-        ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<Product> spotlightProduct =
-        ref.watch(getProductProvider('xx99-mark-2-headphones'));
-    return DefaultLayout(
-      body: Column(
-        children: [
-          spotlightProduct.when(
-            loading: () => const CircularProgressIndicator(),
-            error: (error, stack) => Text(error.toString()),
-            data: (product) => _banner(context, product),
-          ),
-          const ProductCategoryList()
         ],
       ),
     );
