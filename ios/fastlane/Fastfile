@@ -20,9 +20,9 @@ platform :ios do
   lane :beta_test do
     
       firebase_app_distribution(
-          app: "1:329324834777:ios:2dcf53b637a65b1fa8f3c8"
-          firebase_cli_token: "1//03Y9CT9MMjabUCgYIARAAGAMSNwF-L9IrqWiqbe7A9r5UXSX3uo3tiRQwEpF5UEoDJAt21AkIN_vh74QJyojwm81HKMkwwFebk48",
-          testers: "c.j91350@gmail.com",
+          app: IOS_APP_ID
+          firebase_cli_token: FIREBASE_CLI_TOKEN,
+          testers: EMAIL_TESTERS,
           release_notes: "Deployment test release of Audiophile app ",
       )
   end
