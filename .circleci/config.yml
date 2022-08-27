@@ -2,15 +2,14 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-  flutter: circleci/flutter@1.2.0
-
+  flutter: circleci/flutter@1.1.0
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   audiophile-test-workflow:
     jobs:
-       - flutter/lint:
+      - flutter/lint:
           version: 2.2.3
-       - flutter/unit_test:
+      - flutter/unit_test:
           version: 2.2.3
