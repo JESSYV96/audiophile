@@ -10,9 +10,9 @@ jobs:
       - image: cirrusci/flutter:3.0.5
 
     steps:
-      - run:
-          name: "Set up pubspec file"
-          command: "flutter pub get"
+      # - run:
+      #     name: "Set up pubspec file"
+      #     command: "flutter pub get"
       - run:
           name: "Set up"
           command: "flutter test"
