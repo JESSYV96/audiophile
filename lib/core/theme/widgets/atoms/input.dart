@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppInput extends StatelessWidget {
   final String label;
   final String? placeholder;
-  const AppInput({super.key, required this.label, this.placeholder});
+  const AppInput({Key? key, required this.label, this.placeholder}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ import '../widgets/product/product_item.dart';
 
 class ProductCategoryScreen extends ConsumerWidget {
   final String categoryName;
-  const ProductCategoryScreen({super.key, required this.categoryName});
+  const ProductCategoryScreen({Key? key, required this.categoryName}): super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

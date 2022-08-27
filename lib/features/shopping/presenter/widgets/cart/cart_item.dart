@@ -7,7 +7,7 @@ import '../../../domain/entities/item.dart';
 
 class CartItem extends StatelessWidget {
   final Item item;
-  const CartItem(this.item, {super.key});
+  const CartItem(this.item, {Key? key}): super(key: key);
 
   @override
   Widget build(BuildContext context) {

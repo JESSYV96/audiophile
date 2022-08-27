@@ -8,7 +8,7 @@ import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../../shopping/presenter/providers/cart_provider.dart';
 
 class CheckoutScreen extends ConsumerWidget {
-  const CheckoutScreen({super.key});
+  const CheckoutScreen({Key? key}): super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -6,12 +6,10 @@ import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
 import '../../../domain/entities/product.dart';
 
-
-
 class ProductItem extends StatelessWidget {
   final Product product;
 
-  const ProductItem(this.product, {super.key});
+  const ProductItem(this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
