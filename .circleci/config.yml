@@ -7,7 +7,6 @@ version: 2.1
 jobs:
   unit-test:
     docker:
-      - image: cimg/base:stable
       - image: cirrusci/flutter:3.0.5
 
     steps:
