@@ -1,14 +1,18 @@
+import 'package:audiophile/core/theme/widgets/atoms/input/input_radio.dart';
+import 'package:audiophile/features/checkout/presenter/widgets/summary_payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/widgets/atoms/input.dart';
+import '../../../../core/theme/widgets/atoms/input/input_text.dart';
 import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../../shopping/presenter/providers/cart_provider.dart';
+import '../../domain/enums/payement_method.dart';
+import '../providers/checkout_form_provider.dart';
 
 class CheckoutScreen extends ConsumerWidget {
-  const CheckoutScreen({Key? key}): super(key: key);
+  const CheckoutScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +31,8 @@ class CheckoutScreen extends ConsumerWidget {
             ),
             _billingDetails(context),
             _shippingInfo(context),
-            _paymentDetails(context)
+            _paymentDetails(context, ref),
+            SummaryPayment(cart: cartNotifier.getCartState())
           ],
         ),
       ),
@@ -38,9 +43,10 @@ class CheckoutScreen extends ConsumerWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.only(bottom: 25),
             child: Text(
               AppLocalizations.of(context)!.billingDetails.toUpperCase(),
               style: Theme.of(context)
@@ -49,17 +55,17 @@ class CheckoutScreen extends ConsumerWidget {
                   .copyWith(color: AppColors.secondary),
             ),
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.name,
             placeholder: 'Bobby Brown',
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.emailAddress,
             placeholder: 'jessy.v@gmail.com',
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.phoneNumber,
-            placeholder: 'jessy.v@gmail.com',
+            placeholder: '0601020304',
           ),
         ],
       ),
@@ -70,9 +76,10 @@ class CheckoutScreen extends ConsumerWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.only(bottom: 25),
             child: Text(
               AppLocalizations.of(context)!.shippingInfo.toUpperCase(),
               style: Theme.of(context)
@@ -81,19 +88,19 @@ class CheckoutScreen extends ConsumerWidget {
                   .copyWith(color: AppColors.secondary),
             ),
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.address,
-            placeholder: '20 rue des radars',
+            placeholder: 'Avenue des champs élysées',
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.zipCode,
-            placeholder: '91000',
+            placeholder: '75016',
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.city,
-            placeholder: 'Evry',
+            placeholder: 'Paris',
           ),
-          AppInput(
+          AppTextInput(
             label: AppLocalizations.of(context)!.country,
             placeholder: 'France',
           ),
@@ -102,16 +109,44 @@ class CheckoutScreen extends ConsumerWidget {
     );
   }
 
-  Widget _paymentDetails(BuildContext context) {
+  Widget _paymentDetails(BuildContext context, WidgetRef ref) {
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.paymentDetails.toUpperCase(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: Text(
+              AppLocalizations.of(context)!.paymentDetails.toUpperCase(),
               style: Theme.of(context)
                   .textTheme
                   .headline6!
-                  .copyWith(color: AppColors.secondary)),
+                  .copyWith(color: AppColors.secondary),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: AppRadioInput<PaymentMethods>(
+                title: Text(AppLocalizations.of(context)!.creditCard,
+                    style: Theme.of(context).textTheme.bodyText1),
+                value: PaymentMethods.creditCart,
+                radioValue: ref.watch(paymentMethodProvider),
+                action: (value) {
+                  ref.read(paymentMethodProvider.notifier).state =
+                      PaymentMethods.creditCart;
+                }),
+          ),
+          AppRadioInput<PaymentMethods>(
+            title: Text(AppLocalizations.of(context)!.cashOnDelivery,
+                style: Theme.of(context).textTheme.bodyText1),
+            value: PaymentMethods.cashOnDelivery,
+            radioValue: ref.watch(paymentMethodProvider),
+            action: (value) {
+              ref.read(paymentMethodProvider.notifier).state =
+                  PaymentMethods.cashOnDelivery;
+            },
+          ),
         ],
       ),
     );

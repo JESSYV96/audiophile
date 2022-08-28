@@ -1,0 +1,1 @@
+enum PaymentMethods { creditCart, cashOnDelivery }

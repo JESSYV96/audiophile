@@ -1,4 +1,4 @@
-package com.audiophile.vautour.jessy
+package com.audiophile.vautour.audiophile_clean
 
 import io.flutter.embedding.android.FlutterActivity
 

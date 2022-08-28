@@ -2,16 +2,15 @@ import 'package:audiophile/core/theme/widgets/atoms/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
+import '../../../../../core/utils/amount_format.dart';
 import '../../../domain/services/cart_service.dart';
 import '../../providers/cart_provider.dart';
 import 'cart_item.dart';
 
 Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
-  final amountFormat = NumberFormat.currency(locale: "en_US", symbol: "€");
 
   return showDialog<void>(
     context: context,

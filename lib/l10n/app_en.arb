@@ -7,9 +7,15 @@
     "removeAll": "Remove all",
     "checkout": "Checkout",
     "billingDetails": "Billing details",
+    "shipping": "Shipping",
     "shippingInfo": "Shipping Information",
     "paymentDetails": "Payment details",
     "paymentMethod": "Payment method",
+    "cashOnDelivery": "Cash on delivery",
+    "creditCard": "Credit card",
+    "continueAndPay": "Continue & Pay",
+    "summary": "Summary",
+    "pay": "Pay",
     "name": "Name",
     "email": "Email",
     "emailAddress": "Email address",
@@ -18,5 +24,7 @@
     "zipCode": "Zip code",
     "city": "City",
     "country": "Country",
-    "total": "total"
+    "total": "total",
+    "totalAmountOrder": "Total Amount Order",
+    "vat": "VAT"
 }

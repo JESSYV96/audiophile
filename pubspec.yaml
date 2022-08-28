@@ -19,7 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
-  
+
 dependencies:
   flutter:
     sdk: flutter
@@ -31,7 +31,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_modular: ^5.0.3
   flutter_riverpod: ^2.0.0-dev.9
-  flutter_hooks: ^0.18.5+1
+  flutter_stripe: ^4.0.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,7 @@ flutter:
   assets:
     - assets/img/
     - assets/data/
+    - .env
 
   fonts:
     - family: Manrope

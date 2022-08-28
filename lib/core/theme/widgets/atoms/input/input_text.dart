@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class AppInput extends StatelessWidget {
+class AppTextInput extends StatelessWidget {
   final String label;
   final String? placeholder;
-  const AppInput({Key? key, required this.label, this.placeholder}) : super(key: key);
+  const AppTextInput({super.key, required this.label, this.placeholder});
 
   @override
   Widget build(BuildContext context) {

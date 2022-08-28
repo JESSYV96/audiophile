@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../core/theme/widgets/molecules/app_bar.dart';
+import '../../../../core/utils/amount_format.dart';
 import '../../domain/entities/product.dart';
 import '../providers/cart_provider.dart';
 import '../widgets/cart/quantity_counter.dart';
@@ -20,7 +20,6 @@ class ProductDetailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final amountFormat = NumberFormat.currency(locale: "en_US", symbol: "€");
     final quantity = ref.watch(quantityProvider);
     final cartNotifier = ref.read(cartProvider.notifier);
 

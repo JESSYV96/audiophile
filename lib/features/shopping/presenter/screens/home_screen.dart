@@ -8,7 +8,7 @@ import '../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
 import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../domain/entities/product.dart';
 import '../providers/cart_provider.dart';
-import '../providers/get_product_provider.dart';
+import '../providers/product_provider.dart';
 import '../widgets/product/product_category_list.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {

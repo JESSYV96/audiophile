@@ -1,8 +1,8 @@
 import 'package:audiophile/features/shopping/presenter/widgets/cart/quantity_counter.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../../core/theme/colors.dart';
+import '../../../../../core/utils/amount_format.dart';
 import '../../../domain/entities/item.dart';
 
 class CartItem extends StatelessWidget {
@@ -11,7 +11,6 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final amountFormat = NumberFormat.currency(locale: "en_US", symbol: "€");
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
