@@ -1,23 +1,25 @@
 import 'package:audiophile/core/utils/amount_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
 import '../../../shopping/domain/entities/item.dart';
-import '../../domain/services/checkout_service.dart';
+import '../../domain/entities/order.dart';
+import '../providers/order_form_provider.dart';
 import 'checkout_cart_item.dart';
 import 'checkout_dialog.dart';
 
-class SummaryPayment extends StatelessWidget {
-  final Set<Item> cart;
-  const SummaryPayment({super.key, required this.cart});
+class SummaryPayment extends ConsumerWidget {
+  const SummaryPayment({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final Order order = ref.watch(orderProvider);
+
     return Container(
         color: AppColors.white,
-        margin: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,13 +30,13 @@ class SummaryPayment extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
-            _itemList(cart),
-            _totalPriceDetails(context, cart),
+            _itemList(order.cart),
+            _totalPriceDetails(context, order),
             AppFilledButton(
-              text: AppLocalizations.of(context)!.checkout,
+              text: AppLocalizations.of(context)!.checkout.toUpperCase(),
               width: MediaQuery.of(context).size.width,
               action: () {
-                checkoutDialog(context);
+                checkoutDialog(context, order);
               },
             )
           ],
@@ -55,15 +57,7 @@ Widget _itemList(Set<Item> cart) {
   );
 }
 
-Widget _totalPriceDetails(BuildContext context, Set<Item> cart) {
-  final double totalAmount = CheckoutService.getTotalAmount(cart);
-  final double shippingPrice = CheckoutService.getShippingPrice();
-  final double vat = CheckoutService.getVATAmount(amount: totalAmount);
-  final double totalAmountOrder = CheckoutService.getTotalPrice(
-    shippingPrice: shippingPrice,
-    vat: vat,
-    totalItemAmount: totalAmount,
-  );
+Widget _totalPriceDetails(BuildContext context, Order order) {
   return Column(
     children: [
       Padding(
@@ -72,7 +66,7 @@ Widget _totalPriceDetails(BuildContext context, Set<Item> cart) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.total.toUpperCase()),
-            Text(amountFormat.format(totalAmount))
+            Text(amountFormat.format(order.cartAmount))
           ],
         ),
       ),
@@ -82,7 +76,7 @@ Widget _totalPriceDetails(BuildContext context, Set<Item> cart) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.shipping.toUpperCase()),
-            Text(amountFormat.format(shippingPrice))
+            Text(amountFormat.format(order.shippingPrice))
           ],
         ),
       ),
@@ -92,7 +86,7 @@ Widget _totalPriceDetails(BuildContext context, Set<Item> cart) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.vat.toUpperCase()),
-            Text(amountFormat.format(vat))
+            Text(amountFormat.format(order.vatAmount))
           ],
         ),
       ),
@@ -102,7 +96,7 @@ Widget _totalPriceDetails(BuildContext context, Set<Item> cart) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.totalAmountOrder.toUpperCase()),
-            Text(amountFormat.format(totalAmountOrder))
+            Text(amountFormat.format(order.totalAmount))
           ],
         ),
       ),

@@ -1,7 +1,8 @@
-import 'package:audiophile/features/checkout/presenter/screens/checkout_form_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class CheckoutModule extends Module {
+import 'presenter/screens/checkout_form_screen.dart';
+
+class OrderModule extends Module {
   @override
   List<Bind> get binds => [];
 
@@ -9,7 +10,7 @@ class CheckoutModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           '/',
-          child: (context, args) => const CheckoutScreen(),
+          child: (context, args) => const OrderScreen(),
         ),
       ];
 }

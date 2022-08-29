@@ -11,7 +11,6 @@ import '../../providers/cart_provider.dart';
 import 'cart_item.dart';
 
 Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
-
   return showDialog<void>(
     context: context,
     barrierDismissible: true,
@@ -59,8 +58,8 @@ Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
                           .copyWith(color: AppColors.black),
                     ),
                     Text(
-                        amountFormat.format(CartService.getTotalAmount(
-                            notifier.getCartState())),
+                        amountFormat.format(
+                            CartService.getCartAmount(notifier.getCartState())),
                         style: Theme.of(context).textTheme.headline5)
                   ],
                 ),
@@ -69,7 +68,7 @@ Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
                 text: AppLocalizations.of(context)!.checkout.toUpperCase(),
                 width: 300,
                 action: () {
-                  Modular.to.pushNamed('/checkout/');
+                  Modular.to.pushNamed('/order/');
                 },
               )
             ],

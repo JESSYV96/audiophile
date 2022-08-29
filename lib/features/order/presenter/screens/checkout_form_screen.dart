@@ -1,5 +1,4 @@
 import 'package:audiophile/core/theme/widgets/atoms/input/input_radio.dart';
-import 'package:audiophile/features/checkout/presenter/widgets/summary_payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,14 +8,16 @@ import '../../../../core/theme/widgets/atoms/input/input_text.dart';
 import '../../../../core/theme/widgets/molecules/app_bar.dart';
 import '../../../shopping/presenter/providers/cart_provider.dart';
 import '../../domain/enums/payement_method.dart';
-import '../providers/checkout_form_provider.dart';
+import '../providers/order_form_provider.dart';
+import '../widgets/summary_payment.dart';
 
-class CheckoutScreen extends ConsumerWidget {
-  const CheckoutScreen({super.key});
+class OrderScreen extends ConsumerWidget {
+  const OrderScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cartNotifier = ref.read(cartProvider.notifier);
+    final order = ref.read(orderProvider);
 
     return Scaffold(
       appBar: defaultAppBar(context, cartNotifier),
@@ -32,7 +33,7 @@ class CheckoutScreen extends ConsumerWidget {
             _billingDetails(context),
             _shippingInfo(context),
             _paymentDetails(context, ref),
-            SummaryPayment(cart: cartNotifier.getCartState())
+            const SummaryPayment()
           ],
         ),
       ),
