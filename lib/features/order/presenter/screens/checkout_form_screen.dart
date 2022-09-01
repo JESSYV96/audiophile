@@ -1,4 +1,5 @@
 import 'package:audiophile/core/theme/widgets/atoms/input/input_radio.dart';
+import 'package:audiophile/features/order/domain/entities/purchaser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -30,7 +31,7 @@ class OrderScreen extends ConsumerWidget {
               child: Text(AppLocalizations.of(context)!.checkout,
                   style: Theme.of(context).textTheme.headline2),
             ),
-            _billingDetails(context),
+            _billingDetails(context, order.purchaser),
             _shippingInfo(context),
             _paymentDetails(context, ref),
             const SummaryPayment()
@@ -40,7 +41,7 @@ class OrderScreen extends ConsumerWidget {
     );
   }
 
-  Widget _billingDetails(BuildContext context) {
+  Widget _billingDetails(BuildContext context, Purchaser purchaser) {
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Column(
@@ -59,14 +60,17 @@ class OrderScreen extends ConsumerWidget {
           AppTextInput(
             label: AppLocalizations.of(context)!.name,
             placeholder: 'Bobby Brown',
+            initialValue: purchaser.name,
           ),
           AppTextInput(
             label: AppLocalizations.of(context)!.emailAddress,
             placeholder: 'jessy.v@gmail.com',
+            initialValue: purchaser.email,
           ),
           AppTextInput(
             label: AppLocalizations.of(context)!.phoneNumber,
             placeholder: '0601020304',
+            initialValue: purchaser.phoneNumber,
           ),
         ],
       ),
@@ -92,18 +96,22 @@ class OrderScreen extends ConsumerWidget {
           AppTextInput(
             label: AppLocalizations.of(context)!.address,
             placeholder: 'Avenue des champs élysées',
+            initialValue: 'test'
           ),
           AppTextInput(
             label: AppLocalizations.of(context)!.zipCode,
             placeholder: '75016',
+            initialValue: '00000'
           ),
           AppTextInput(
             label: AppLocalizations.of(context)!.city,
             placeholder: 'Paris',
+            initialValue: 'Ville'
           ),
           AppTextInput(
             label: AppLocalizations.of(context)!.country,
             placeholder: 'France',
+            initialValue: 'Pays',
           ),
         ],
       ),

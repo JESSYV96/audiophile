@@ -68,6 +68,7 @@ Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
                 text: AppLocalizations.of(context)!.checkout.toUpperCase(),
                 width: 300,
                 action: () {
+                  Navigator.pop(context);
                   Modular.to.pushNamed('/order/');
                 },
               )

@@ -8,12 +8,12 @@ import '../../domain/enums/payement_method.dart';
 import '../../domain/value_object/address.dart';
 
 final purchaserProvider = StateProvider<Purchaser>((ref) {
-  return Purchaser(
-      name: 'Bobby', email: 'bobby@email.fr', phoneNumber: '0601020304');
+  return const Purchaser(
+      name: 'Jessy', email: 'jessy@email.fr', phoneNumber: '0123456789');
 });
 
 final addressProvider = StateProvider<Address>((ref) {
-  return Address(street: '', city: '', country: '', zipCode: '');
+  return const Address(street: '', city: '', country: '', zipCode: '');
 });
 
 final paymentMethodProvider = StateProvider<PaymentMethods>((ref) {

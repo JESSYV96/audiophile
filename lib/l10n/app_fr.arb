@@ -16,6 +16,10 @@
     "summary": "Récapitulatif",
     "continueAndPay": "Continuer & Payer",
     "pay": "Payer",
+    "inProgressPayment": "Paiement en cours",
+    "thankYouForYourOrder": "Merci pour votre commande",
+    "youWillrecieveConfirmationEmail": "Vous recevrez un email de confirmation",
+    "backToHome": "Retour à la page d'accueil",
     "name": "Nom",
     "email": "Email",
     "emailAddress": "Adresse Email",
@@ -25,6 +29,7 @@
     "city": "Ville",
     "country": "Pays",
     "total": "Total",
-    "totalAmountOrder": "Montant total de la commande",
-    "vat": "TVA"
+    "totalAmountOrder": "Total de la commande",
+    "vat": "TVA",
+    "andOtherItem": "Et 2 autre(s) article(s)"
 }

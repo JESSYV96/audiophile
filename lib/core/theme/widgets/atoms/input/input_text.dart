@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class AppTextInput extends StatelessWidget {
   final String label;
   final String? placeholder;
-  const AppTextInput({super.key, required this.label, this.placeholder});
+  final String? initialValue;
+  const AppTextInput(
+      {super.key, required this.label, this.initialValue, this.placeholder});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,9 @@ class AppTextInput extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.w600),
             ),
           ),
-          TextField(
+          TextFormField(
+            initialValue: initialValue,
+            style: Theme.of(context).textTheme.bodyText1,
             decoration: InputDecoration(
               hintText: placeholder,
               border: const OutlineInputBorder(),

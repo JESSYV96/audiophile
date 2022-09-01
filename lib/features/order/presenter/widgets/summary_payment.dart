@@ -50,7 +50,7 @@ Widget _itemList(Set<Item> cart) {
         .map(
           (item) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child: CartItem(item: item),
+            child: CheckoutCartItem(item: item),
           ),
         )
         .toList(),
