@@ -1,6 +1,12 @@
 {
   "hosting": {
     "public": "build/web",
+    "headers": [
+      {
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

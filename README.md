@@ -1,6 +1,8 @@
-# clean_archi_flutter
+# Audiophile App
 
-A new Flutter project.
+E-commerce application deployed on Firebase
+
+Link: https://audiophile-clean.web.app
 
 ## Getting Started
 

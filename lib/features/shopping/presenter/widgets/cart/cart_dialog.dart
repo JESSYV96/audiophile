@@ -40,38 +40,41 @@ Future<void> cartDialog(BuildContext context, CartNotifier notifier) {
                 ),
               if (notifier.getCartState().isNotEmpty)
                 Column(
-                  children: notifier
-                      .getCartState()
-                      .map((item) => CartItem(item))
-                      .toList(),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        AppLocalizations.of(context)!.total.toUpperCase(),
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1!
-                            .copyWith(color: AppColors.black),
+                  children: [
+                    ...notifier
+                        .getCartState()
+                        .map((item) => CartItem(item))
+                        .toList(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.total.toUpperCase(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1!
+                                .copyWith(color: AppColors.black),
+                          ),
+                          Text(
+                              amountFormat.format(CartService.getCartAmount(
+                                  notifier.getCartState())),
+                              style: Theme.of(context).textTheme.headline5)
+                        ],
                       ),
-                      Text(
-                          amountFormat.format(
-                              CartService.getCartAmount(notifier.getCartState())),
-                          style: Theme.of(context).textTheme.headline5)
-                    ],
-                  ),
+                    ),
+                    AppFilledButton(
+                      text:
+                          AppLocalizations.of(context)!.checkout.toUpperCase(),
+                      width: 300,
+                      action: () {
+                        Navigator.pop(context);
+                        Modular.to.pushNamed('/order/');
+                      },
+                    ),
+                  ],
                 ),
-                AppFilledButton(
-                  text: AppLocalizations.of(context)!.checkout.toUpperCase(),
-                  width: 300,
-                  action: () {
-                    Navigator.pop(context);
-                    Modular.to.pushNamed('/order/');
-                  },
-                )
             ],
           ),
         ),

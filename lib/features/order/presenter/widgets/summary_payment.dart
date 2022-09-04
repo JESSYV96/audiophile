@@ -12,7 +12,10 @@ import 'checkout_cart_item.dart';
 import 'checkout_dialog.dart';
 
 class SummaryPayment extends ConsumerWidget {
-  const SummaryPayment({super.key});
+  final Set<Item> cartState;
+  final Order order;
+
+  const SummaryPayment({super.key, required this.cartState,required this.order});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +33,7 @@ class SummaryPayment extends ConsumerWidget {
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
-            _itemList(order.cart),
+            _itemList(cartState),
             _totalPriceDetails(context, order),
             AppFilledButton(
               text: AppLocalizations.of(context)!.checkout.toUpperCase(),

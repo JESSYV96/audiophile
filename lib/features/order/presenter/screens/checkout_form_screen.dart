@@ -34,7 +34,10 @@ class OrderScreen extends ConsumerWidget {
             _billingDetails(context, order.purchaser),
             _shippingInfo(context),
             _paymentDetails(context, ref),
-            const SummaryPayment()
+            SummaryPayment(
+              cartState: ref.read(cartProvider.notifier).getCartState(),
+              order: order,
+            )
           ],
         ),
       ),
@@ -94,20 +97,17 @@ class OrderScreen extends ConsumerWidget {
             ),
           ),
           AppTextInput(
-            label: AppLocalizations.of(context)!.address,
-            placeholder: 'Avenue des champs élysées',
-            initialValue: 'test'
-          ),
+              label: AppLocalizations.of(context)!.address,
+              placeholder: 'Avenue des champs élysées',
+              initialValue: 'test'),
           AppTextInput(
-            label: AppLocalizations.of(context)!.zipCode,
-            placeholder: '75016',
-            initialValue: '00000'
-          ),
+              label: AppLocalizations.of(context)!.zipCode,
+              placeholder: '75016',
+              initialValue: '00000'),
           AppTextInput(
-            label: AppLocalizations.of(context)!.city,
-            placeholder: 'Paris',
-            initialValue: 'Ville'
-          ),
+              label: AppLocalizations.of(context)!.city,
+              placeholder: 'Paris',
+              initialValue: 'Ville'),
           AppTextInput(
             label: AppLocalizations.of(context)!.country,
             placeholder: 'France',
