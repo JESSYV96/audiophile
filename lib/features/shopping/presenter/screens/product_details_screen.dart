@@ -10,6 +10,7 @@ import '../../../../core/utils/amount_format.dart';
 import '../../domain/entities/product.dart';
 import '../providers/cart_provider.dart';
 import '../widgets/cart/quantity_counter.dart';
+import '../widgets/product/product_photo_slot.dart';
 
 final quantityProvider = StateProvider.autoDispose((ref) => 1);
 
@@ -26,9 +27,10 @@ class ProductDetailScreen extends ConsumerWidget {
     return Scaffold(
       appBar: defaultAppBar(context, cartNotifier),
       body: Container(
-        margin: const EdgeInsets.only(left: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         child: ListView(
           children: [
+            PhotoSlot(product.photoUrl),
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: Text(

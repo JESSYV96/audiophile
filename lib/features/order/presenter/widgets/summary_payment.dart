@@ -16,7 +16,7 @@ class SummaryPayment extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final Order order = ref.watch(orderProvider);
+    final Order order = ref.watch(orderProvider.state).state;
 
     return Container(
         color: AppColors.white,
@@ -36,7 +36,7 @@ class SummaryPayment extends ConsumerWidget {
               text: AppLocalizations.of(context)!.checkout.toUpperCase(),
               width: MediaQuery.of(context).size.width,
               action: () {
-                checkoutDialog(context, order);
+                checkoutDialog(context, order.status);
               },
             )
           ],

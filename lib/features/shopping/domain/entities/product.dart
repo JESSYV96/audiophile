@@ -1,12 +1,13 @@
 import 'package:equatable/equatable.dart';
-class Product extends Equatable {
 
+class Product extends Equatable {
   final int id;
   final String slug;
   final String name;
   final String shortName;
   final String category;
   final String description;
+  final String photoUrl;
   final double price;
   final bool isNewProduct;
 
@@ -17,6 +18,7 @@ class Product extends Equatable {
     required this.shortName,
     required this.category,
     required this.description,
+    required this.photoUrl,
     required this.price,
     required this.isNewProduct,
   });
@@ -29,6 +31,7 @@ class Product extends Equatable {
       shortName: json["shortName"],
       category: json["category"],
       description: json["description"],
+      photoUrl: json["photoUrl"],
       price: json["price"],
       isNewProduct: json["isNewProduct"],
     );
@@ -36,7 +39,7 @@ class Product extends Equatable {
 
   @override
   List<Object?> get props =>
-      [id, slug, name, shortName, category, description, price, isNewProduct];
+      [id, slug, name, shortName, category, description, photoUrl, price, isNewProduct];
 
   @override
   bool get stringify => true;

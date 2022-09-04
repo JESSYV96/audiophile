@@ -7,6 +7,7 @@
             "shortName": "XX99 Mark I",
             "description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
             "category": "headphones",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/xx99-mark-1-headphones.png?alt=media&token=e7156e49-0fd8-474f-982e-eeaa2dc15515",
             "price": 149.99,
             "isNewProduct": false
         },
@@ -17,6 +18,7 @@
             "shortName": "XX99 Mark II",
             "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
             "category": "headphones",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/xx99-mark-2-headphones.png?alt=media&token=26f6cdc6-f8c4-4fa1-a9cc-a8caa104001f",
             "price": 299.99,
             "isNewProduct": true
         },
@@ -27,6 +29,7 @@
             "shortName": "XX59",
             "description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
             "category": "headphones",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/xx59-headphones.png?alt=media&token=ba8bcd31-98c7-4ac6-9945-6a2797265840",
             "price": 189.99,
             "isNewProduct": false
         },
@@ -37,26 +40,29 @@
             "shortName": "ZX9",
             "description": "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
             "category": "speakers",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/zx9-speaker.png?alt=media&token=d65bebcd-8b9f-4c4b-bfc0-934013027e2c",
             "price": 499.99,
             "isNewProduct": true
         },
         {
-            "id": 4,
+            "id": 5,
             "slug": "zx7-speaker",
             "name": "ZX7 Speaker",
             "shortName": "ZX7",
             "description": " Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
             "category": "speakers",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/zx7-speaker.png?alt=media&token=ff32d50f-1826-4a37-a8de-5bd27d312208",
             "price": 199.99,
             "isNewProduct": false
         },
         {
-            "id": 5,
+            "id": 6,
             "slug": "yx1-wireless-earphones",
             "name": "YX1 Wireless Earphones",
             "shortName": "YX1",
             "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
             "category": "earphones",
+            "photoUrl": "https://firebasestorage.googleapis.com/v0/b/audiophile-clean.appspot.com/o/yx1-earphone.png?alt=media&token=8e4a896e-2090-4aa6-b371-137f4536f0d4",
             "price": 59.99,
             "isNewProduct": true
         }

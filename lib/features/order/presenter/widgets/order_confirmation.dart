@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
@@ -8,7 +9,7 @@ import '../../../../core/utils/amount_format.dart';
 import '../../../shopping/domain/entities/item.dart';
 import 'checkout_cart_item.dart';
 
-class OrderConfirmation extends StatelessWidget {
+class OrderConfirmation extends ConsumerWidget {
   final double totalAmountOrder;
   final Set<Item> cart;
 
@@ -16,7 +17,7 @@ class OrderConfirmation extends StatelessWidget {
       {super.key, required this.totalAmountOrder, required this.cart});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Column(

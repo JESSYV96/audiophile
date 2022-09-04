@@ -1,3 +1,4 @@
+import 'package:audiophile/features/shopping/presenter/widgets/product/product_photo_slot.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -17,11 +18,12 @@ class ProductItem extends StatelessWidget {
       padding: const EdgeInsets.all(25),
       child: Column(
         children: [
+          PhotoSlot(product.photoUrl),
           if (product.isNewProduct)
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: Text(
-                'New Product'.toUpperCase(),
+                AppLocalizations.of(context)!.newProduct.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme

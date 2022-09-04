@@ -30,7 +30,7 @@ class QuantityCounter extends ConsumerWidget {
           AppIcon(
             icon: Icons.remove,
             color: AppColors.black.withOpacity(0.5),
-            size: 14,
+            size: 18,
             action: reduceQuantity,
           ),
           Text(
@@ -43,7 +43,7 @@ class QuantityCounter extends ConsumerWidget {
           AppIcon(
             icon: Icons.add,
             color: AppColors.black.withOpacity(0.5),
-            size: 14,
+            size: 18,
             action: raiseQuantity,
           ),
         ],

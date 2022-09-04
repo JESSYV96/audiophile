@@ -10,8 +10,8 @@ class Order extends Equatable {
   final Purchaser purchaser;
   final Address address;
   final PaymentMethods paymentMethod;
-  final OrderStatus status;
   final Set<Item> cart;
+  final OrderStatus status;
 
   const Order({
     required this.purchaser,
