@@ -6,9 +6,9 @@ platform :android do
       # build_android_app(...)
       # # build_android_app is a built-in fastlane action.
       firebase_app_distribution(
-          app: ANDROID_APP_ID,
-          firebase_cli_token: FIREBASE_CLI_TOKEN,
-          testers: EMAIL_TESTERS,
+          app: ENV['ANDROID_APP_ID'],
+          firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
+          testers: ENV['EMAIL_TESTERS'],
           android_artifact_type: "APK",
           android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
           release_notes: "Deployment test of app"

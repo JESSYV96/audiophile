@@ -11,6 +11,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   Stripe.publishableKey = dotenv.env['STRIPE_API_KEY']!;
+  
+  await Stripe.instance.applySettings();
 
   runApp(
     ProviderScope(
