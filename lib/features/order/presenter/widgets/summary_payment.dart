@@ -6,20 +6,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/widgets/atoms/buttons/filled_button.dart';
 import '../../../shopping/domain/entities/item.dart';
-import '../../domain/entities/order.dart';
+import '../../../shopping/presenter/providers/cart_provider.dart';
 import '../providers/order_form_provider.dart';
 import 'checkout_cart_item.dart';
 import 'checkout_dialog.dart';
 
-class SummaryPayment extends ConsumerWidget {
-  final Set<Item> cartState;
-  final Order order;
+class SummaryPayment extends ConsumerStatefulWidget {
 
-  const SummaryPayment({super.key, required this.cartState,required this.order});
+  const SummaryPayment({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final Order order = ref.watch(orderProvider.state).state;
+  _SummaryPayment createState() => _SummaryPayment();
+}
+
+class _SummaryPayment extends ConsumerState<SummaryPayment> {
+  @override
+  Widget build(BuildContext context) {
+    final order = ref.watch(orderProvider.state).state;
+    final cartState = ref.watch(cartProvider.notifier).getCartState();
 
     return Container(
         color: AppColors.white,
@@ -34,7 +38,7 @@ class SummaryPayment extends ConsumerWidget {
               ),
             ),
             _itemList(cartState),
-            _totalPriceDetails(context, order),
+            _totalPriceDetails(context, ref),
             AppFilledButton(
               text: AppLocalizations.of(context)!.checkout.toUpperCase(),
               width: MediaQuery.of(context).size.width,
@@ -60,7 +64,12 @@ Widget _itemList(Set<Item> cart) {
   );
 }
 
-Widget _totalPriceDetails(BuildContext context, Order order) {
+Widget _totalPriceDetails(BuildContext context, WidgetRef ref) {
+  final cartAmount = ref.watch(cartAmountProvider);
+  final totalAmount = ref.watch(totalAmountProvider);
+  final shippingPrice = ref.watch(shippingPriceProvider);
+  final vatAmount = ref.watch(vatProvider);
+
   return Column(
     children: [
       Padding(
@@ -69,7 +78,7 @@ Widget _totalPriceDetails(BuildContext context, Order order) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.total.toUpperCase()),
-            Text(amountFormat.format(order.cartAmount))
+            Text(amountFormat.format(cartAmount))
           ],
         ),
       ),
@@ -79,7 +88,7 @@ Widget _totalPriceDetails(BuildContext context, Order order) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.shipping.toUpperCase()),
-            Text(amountFormat.format(order.shippingPrice))
+            Text(amountFormat.format(shippingPrice))
           ],
         ),
       ),
@@ -89,7 +98,7 @@ Widget _totalPriceDetails(BuildContext context, Order order) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.vat.toUpperCase()),
-            Text(amountFormat.format(order.vatAmount))
+            Text(amountFormat.format(vatAmount))
           ],
         ),
       ),
@@ -99,7 +108,7 @@ Widget _totalPriceDetails(BuildContext context, Order order) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(AppLocalizations.of(context)!.totalAmountOrder.toUpperCase()),
-            Text(amountFormat.format(order.totalAmount))
+            Text(amountFormat.format(totalAmount))
           ],
         ),
       ),

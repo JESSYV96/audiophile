@@ -17,9 +17,9 @@ class CheckoutCartItem extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: AppImage(),
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: AppImage(item.photoUrl),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

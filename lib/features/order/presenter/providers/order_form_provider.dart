@@ -27,7 +27,7 @@ final orderStatusProvider = StateProvider.autoDispose<OrderStatus>((ref) {
 final orderProvider = StateProvider.autoDispose<Order>((ref) {
   final Purchaser purchaser = ref.watch(purchaserProvider);
   final Address address = ref.watch(addressProvider);
-  final Set<Item> cart = ref.read(cartProvider.notifier).cart;
+  final Set<Item> cart = ref.watch(cartProvider.notifier).getCartState();
   final PaymentMethods paymentMethod = ref.watch(paymentMethodProvider);
   final OrderStatus orderStatus = ref.watch(orderStatusProvider);
 
@@ -38,4 +38,26 @@ final orderProvider = StateProvider.autoDispose<Order>((ref) {
     status: orderStatus,
     cart: cart,
   );
+});
+
+final cartAmountProvider = Provider.autoDispose<double>((ref) {
+  final Order order = ref.watch(orderProvider);
+  return order.cart.fold<double>(0.0, (previous, item) {
+    return previous + item.amount;
+  });
+});
+
+final shippingPriceProvider = Provider.autoDispose<double>((ref) {
+  final Order order = ref.watch(orderProvider);
+  return order.shippingPrice;
+});
+
+final totalAmountProvider = StateProvider.autoDispose<double>((ref) {
+  final Order order = ref.watch(orderProvider);
+  return order.totalAmount;
+});
+
+final vatProvider = Provider.autoDispose<double>((ref) {
+  final Order order = ref.watch(orderProvider);
+  return order.vatAmount;
 });

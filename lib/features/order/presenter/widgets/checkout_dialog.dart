@@ -13,7 +13,7 @@ import 'order_confirmation.dart';
 Future<void> checkoutDialog(BuildContext context, OrderStatus status) async {
   return showDialog<void>(
       context: context,
-      barrierDismissible: status != OrderStatus.paid,
+      barrierDismissible: (status != OrderStatus.paid) ? true : false,
       builder: (BuildContext context) {
         return Consumer(
           builder: (context, ref, _) {

@@ -22,6 +22,7 @@ class CartNotifier extends StateNotifier<Set<Item>> {
       slug: product.slug,
       price: product.price,
       quantity: quantity,
+      photoUrl: product.photoUrl
     );
     AddItemUsecase(repository: CartRepository(CartDatasource()))
         .invoke(newItem);
@@ -29,6 +30,7 @@ class CartNotifier extends StateNotifier<Set<Item>> {
   }
 
   void removeItem(String itemSlug) {
+    // ignore: avoid_print
     print('remove');
   }
 

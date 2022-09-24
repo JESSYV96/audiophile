@@ -12,13 +12,20 @@ import '../../domain/enums/payement_method.dart';
 import '../providers/order_form_provider.dart';
 import '../widgets/summary_payment.dart';
 
-class OrderScreen extends ConsumerWidget {
-  const OrderScreen({super.key});
+
+class OrderScreen extends ConsumerStatefulWidget {
+const OrderScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final cartNotifier = ref.read(cartProvider.notifier);
-    final order = ref.read(orderProvider);
+  _OrderScreen createState() => _OrderScreen();
+}
+
+class _OrderScreen extends ConsumerState<OrderScreen> {
+
+  @override
+  Widget build(BuildContext context) {
+    final cartNotifier = ref.watch(cartProvider.notifier);
+    final order = ref.watch(orderProvider);
 
     return Scaffold(
       appBar: defaultAppBar(context, cartNotifier),
@@ -34,10 +41,7 @@ class OrderScreen extends ConsumerWidget {
             _billingDetails(context, order.purchaser),
             _shippingInfo(context),
             _paymentDetails(context, ref),
-            SummaryPayment(
-              cartState: ref.read(cartProvider.notifier).getCartState(),
-              order: order,
-            )
+            const SummaryPayment()
           ],
         ),
       ),
@@ -99,19 +103,19 @@ class OrderScreen extends ConsumerWidget {
           AppTextInput(
               label: AppLocalizations.of(context)!.address,
               placeholder: 'Avenue des champs élysées',
-              initialValue: 'test'),
+              initialValue: ''),
           AppTextInput(
               label: AppLocalizations.of(context)!.zipCode,
               placeholder: '75016',
-              initialValue: '00000'),
+              initialValue: ''),
           AppTextInput(
               label: AppLocalizations.of(context)!.city,
               placeholder: 'Paris',
-              initialValue: 'Ville'),
+              initialValue: ''),
           AppTextInput(
             label: AppLocalizations.of(context)!.country,
             placeholder: 'France',
-            initialValue: 'Pays',
+            initialValue: '',
           ),
         ],
       ),

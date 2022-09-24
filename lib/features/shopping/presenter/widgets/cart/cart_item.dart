@@ -7,24 +7,22 @@ import '../../../domain/entities/item.dart';
 
 class CartItem extends StatelessWidget {
   final Item item;
-  const CartItem(this.item, {Key? key}): super(key: key);
+  const CartItem(this.item, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
           width: 80,
           height: 90,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
               Radius.circular(20),
             ),
             image: DecorationImage(
-              image: NetworkImage(
-                  'https://images.pexels.com/photos/3945667/pexels-photo-3945667.jpeg?auto=compress&cs=tinysrgb&w=800'),
+              image: NetworkImage(item.photoUrl),
             ),
           ),
         ),

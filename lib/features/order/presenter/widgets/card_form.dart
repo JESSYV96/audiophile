@@ -36,6 +36,7 @@ class CardForm extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(vertical: 15),
             child: CardFormField(
               onCardChanged: (card) {
+                // ignore: avoid_print
                 print(card);
               },
             ),

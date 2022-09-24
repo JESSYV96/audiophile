@@ -31,7 +31,7 @@ class _HomeScreen extends ConsumerState<HomeScreen> {
       body: ListView(
         children: [
           spotlightProduct.when(
-            loading: () => const CircularProgressIndicator(),
+            loading: () => Container(),
             error: (error, stack) => Text(error.toString()),
             data: (product) => _banner(context, product),
           ),
