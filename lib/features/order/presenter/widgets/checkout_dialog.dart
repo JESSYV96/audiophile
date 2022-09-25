@@ -43,7 +43,7 @@ Widget _displayTitleWidgetWhen({
   switch (status) {
     case OrderStatus.notPaid:
       return Text(
-        '${AppLocalizations.of(context)!.pay.toUpperCase()} $totalAmount €',
+        '${AppLocalizations.of(context)!.pay.toUpperCase()} ${totalAmount.toStringAsFixed(2)} €',
         style: Theme.of(context)
             .textTheme
             .headline6!
